@@ -52,7 +52,7 @@ public final class EExcelVersionTest
   @Test
   public void testReadWorkbook ()
   {
-    final IReadableResource aXLSX = new ClassPathResource ("excel/test1.xlsx");
+    final IReadableResource aXLSX = new ClassPathResource ("excel/test2.xlsx");
     assertTrue (aXLSX.exists ());
     Workbook aWB = EExcelVersion.XLSX.readWorkbook (aXLSX.getInputStream ());
     assertNotNull (aWB);
@@ -61,7 +61,7 @@ public final class EExcelVersionTest
     aWB = EExcelVersion.XLS.readWorkbook (new NonBlockingByteArrayInputStream ("abc".getBytes (StandardCharsets.ISO_8859_1)));
     assertNull (aWB);
 
-    final IReadableResource aXLS = new ClassPathResource ("excel/test1.xls");
+    final IReadableResource aXLS = new ClassPathResource ("excel/test2.xls");
     assertTrue (aXLS.exists ());
     aWB = EExcelVersion.XLSX.readWorkbook (aXLS.getInputStream ());
     assertNull (aWB);

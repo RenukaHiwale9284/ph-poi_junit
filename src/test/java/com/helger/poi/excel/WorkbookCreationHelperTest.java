@@ -45,16 +45,21 @@ public final class WorkbookCreationHelperTest
         aWBCH.addCell ("Col3");
         aWBCH.addCell ("Col4");
         aWBCH.addCell ("Col5");
+        aWBCH.addCell ("Col6");
+        aWBCH.addCell ("Col7");
 
         // Keep "Col1"
         aWBCH.addMergeRegionInCurrentRow (0, 1);
 
         // Keep "Col3"
         aWBCH.addMergeRegionInCurrentRow (2, 4);
+        
+     // Keep "Col5"
+        aWBCH.addMergeRegionInCurrentRow (5, 6);
       }
 
       // Write to dummy file
-      aWBCH.writeTo (new File ("mock.xlsx"));
+      aWBCH.writeTo (new File ("data/mock.xlsx"));
     }
   }
 }
